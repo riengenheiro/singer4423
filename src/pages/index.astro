@@ -3,1212 +3,554 @@ import Layout from '../layouts/Layout.astro';
 
 const AFFILIATE_URL = 'https://amzn.to/4dObHF0';
 
-const benefits = [
-  {
-    icon: '🧵',
-    title: 'Enfie a linha sem sofrer',
-    desc: 'O passador automático faz isso por você. Sem lupa, sem stress, sem perder 10 minutos lutando com a agulha.',
-  },
-  {
-    icon: '👖',
-    title: 'Costura jeans de verdade',
-    desc: 'Sabe aquela barra que você queria fazer mas a máquina não aguentava? Acabou. A 4423 passa por jeans, moletom e tecido duplo como se fosse nada.',
-  },
-  {
-    icon: '🔘',
-    title: 'Casa de botão perfeita em 1 passo',
-    desc: 'É só encaixar, abaixar o calcador e pronto. Sai perfeita toda vez. Sem medir, sem errar, sem refazer.',
-  },
-  {
-    icon: '✂️',
-    title: 'Cortador de linha na mão',
-    desc: 'Terminou a costura, já corta. Sem procurar tesoura, sem parar o ritmo. Parece bobeira, mas muda tudo no dia a dia.',
-  },
-  {
-    icon: '💡',
-    title: 'Luz onde você precisa',
-    desc: 'Costurou de noite? Tecido escuro? A iluminação embutida mostra cada detalhe. Você nunca mais vai errar ponto por falta de luz.',
-  },
-  {
-    icon: '🎨',
-    title: '23 tipos de ponto',
-    desc: 'Reto, ziguezague, overloque, decorativos... Tudo que você precisa pra sair do básico e criar peças que ninguém vai acreditar que foram feitas em casa.',
-  },
+const reasons = [
+  ['Ela não assusta quem está começando', 'Passador de linha automático, casa de botão em 1 passo e controles simples. Você senta, respira e começa.'],
+  ['Ela aguenta tecido grosso', 'Jeans, moletom, sarja e ajustes do dia a dia ficam muito mais tranquilos com o motor forte da 4423.'],
+  ['Ela dá acabamento bonito', '23 pontos, ajuste de largura e comprimento e ponto firme para a peça não ficar com cara de improviso.'],
+  ['Ela economiza tempo', '1100 pontos por minuto, cortador de linha e iluminação embutida tornam a costura mais fluida.'],
 ];
 
 const reviews = [
-  { name: 'Thais', text: 'Comprei pra minha mãe, ela amou! Simplesmente perfeita.' },
-  { name: 'Kamylla', text: 'Maravilhosa, amei demais. Chegou perfeita, super recomendo!' },
-  { name: 'Katianne', text: 'Minha mãe amou o presente de Dia das Mães!!' },
-  { name: 'kemilly', text: 'Máquina incrível, super rápida! Indico muito.' },
-  { name: 'Vladia', text: 'Comprei pra minha mãe. Super rápida, fácil de manusear.' },
-  { name: 'Aline', text: 'Costura muito bem, ótima para iniciantes.' },
-  { name: 'L. Silva', text: 'Silenciosa e eficiente. Excelente máquina.' },
-  { name: 'Leninha', text: 'Adorei, uso sempre. Chegou bem embalada e tudo certinho.' },
-  { name: 'Taziane', text: 'É maravilhosa! A máquina é potente, ponto bem certinho.' },
-  { name: 'Kezya', text: 'Linda e resistente, amei demais. Ansiosa pra usar!' },
-  { name: 'Eliã', text: 'Amo minha máquina de costura, recomendo esse modelo.' },
-  { name: 'Aline R.', text: 'Estou amando! A máquina é maravilhosa.' },
+  ['Thais', 'Comprei para minha mãe, ela amou! Simplesmente perfeita.'],
+  ['Taziane', 'É maravilhosa, a máquina é potente, ponto bem certinho.'],
+  ['Aline', 'Máquina muito boa, costura muito bem, ótima para iniciantes.'],
+  ['Vladia', 'Comprei pra minha mãe e ela amou. Super rápida, fácil de manusear.'],
+  ['Leninha', 'Adorei a máquina, uso sempre. Chegou bem embalada e tudo certinho.'],
+  ['Kemilly', 'Máquina incrível, super rápida! Indico muito.'],
 ];
 
-const faqs = [
-  {
-    q: 'Será que vale a pena pra mim que estou começando?',
-    a: 'Com certeza! A Singer 4423 é a mais vendida justamente porque funciona tanto pra quem tá começando quanto pra quem já costura há anos. O passador automático, a casa de botão em 1 passo e os 23 pontos inclusos fazem você se sentir segura desde a primeira costura. 4,8 estrelas com quase 3.000 avaliações não mente.',
-  },
-  {
-    q: 'Ela costura jeans mesmo ou é propaganda?',
-    a: 'Costura de verdade. Com 1.100 pontos por minuto e motor reforçado, ela passa por jeans, moletom, lona, sarja dupla. Muitas mulheres compraram justamente pra isso e confirmam nas avaliações: "finalmente uma que aguenta tecido grosso".',
-  },
-  {
-    q: 'Não vou me frustrar como com a outra que tive?',
-    a: 'Entendo totalmente esse medo. A diferença da 4423 é que ela foi feita pra aguentar o uso real — não é brinquedo. Motor forte, corpo de metal, 23 pontos e velocidade de verdade. Por isso é #1 na Amazon com 4,8 estrelas. As mulheres que tiveram experiências ruins antes são as que mais amam essa.',
-  },
-  {
-    q: 'É 220V? Funciona na minha casa?',
-    a: 'Sim, esse modelo é 220V. Se a sua casa é 110V, veja na página da Amazon que tem a opção de voltagem antes de comprar.',
-  },
-  {
-    q: 'Vem com tudo que preciso ou tenho que comprar coisas separado?',
-    a: 'Vem completa: máquina, pedal controlador de velocidade, capa protetora, agulhas extras, calcadores e manual com certificado de garantia de 1 ano. É só tirar da caixa e começar a costurar.',
-  },
-  {
-    q: 'E se eu não gostar ou vier com defeito?',
-    a: 'Comprando pela Amazon, você tem total segurança. Devolução fácil, política de reembolso e 1 ano de garantia do fabricante Singer. Pode comprar tranquila.',
-  },
+const specs = [
+  ['Modelo', 'Singer Facilita Pro 4423'],
+  ['Voltagem', '220V'],
+  ['Pontos', '23 pontos incorporados'],
+  ['Velocidade', 'até 1100 pontos/minuto'],
+  ['Casa de botão', 'automática em 1 passo'],
+  ['Passador de linha', 'automático'],
+  ['Material', 'estrutura interna em metal'],
+  ['Peso', '6,4 kg'],
+  ['Garantia', '1 ano pelo fabricante'],
+  ['Avaliação Amazon', '4,8 de 5 estrelas'],
 ];
 ---
 
 <Layout
-  title="Singer 4423 — Minha Primeira Máquina Séria | Escolha Certa Brasil"
-  description="A Singer 4423 costura jeans, moletom e qualquer tecido sem travar. 4,8★ na Amazon com 2.798 avaliações de mulheres reais. Descubra por que é a #1."
+  title="Singer 4423 vale a pena? Uma máquina forte para costurar sem passar raiva"
+  description="Uma página direta sobre a Singer Facilita Pro 4423: costura jeans, tem passador automático, 23 pontos e 4,8 estrelas na Amazon."
 >
+  <main class="page">
+    <header class="topbar wide">
+      <a href="/" class="brand">Escolha Certa Brasil</a>
+      <a href={AFFILIATE_URL} class="toplink" target="_blank" rel="noopener sponsored">Ver preço na Amazon</a>
+    </header>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="/" class="logo">Escolha Certa Brasil</a>
-      <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored" class="btn btn--primary header-btn">
-        Ver na Amazon
-      </a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-container">
-      <div class="hero-text">
-        <div class="badge">★ #1 mais vendida na Amazon Brasil</div>
-        <h1 class="hero-title">
-          <span class="hero-pre">Pra você que já passou raiva com máquina fraca...</span>
-          <span class="heading-serif hero-main">Essa aqui costura jeans, moletom e não trava.</span>
-        </h1>
-        <p class="hero-sub">
-          A Singer 4423 é a máquina que 2.798 mulheres avaliaram com 4,8 estrelas na Amazon. 
-          Porque ela faz o que promete: costura de verdade, sem frustração, desde o primeiro dia.
+    <section class="hero wide">
+      <div class="hero-copy">
+        <span class="eyebrow">Singer Facilita Pro 4423</span>
+        <h1>Uma máquina para quem quer costurar sem passar raiva.</h1>
+        <p class="lead">
+          Se você já travou no jeans, brigou com a linha ou desistiu de uma peça porque a máquina não ajudava,
+          a Singer 4423 é o tipo de compra que muda a relação com a costura.
         </p>
-        <div class="hero-proof">
-          <span class="stars">★★★★★</span>
-          <span>4,8/5 — 2.798 avaliações verificadas</span>
+
+        <div class="actions">
+          <a href={AFFILIATE_URL} class="btn" target="_blank" rel="noopener sponsored">Ver preço na Amazon</a>
+          <a href="#vale-a-pena" class="btn secondary">Entender se vale pra mim</a>
         </div>
-        <div class="hero-cta">
-          <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored" class="btn btn--primary btn--xl">
-            Quero ver na Amazon
-          </a>
-          <p class="hero-sub-cta">Frete grátis com Prime · Garantia 1 ano · Parcele em até 12x</p>
+
+        <div class="rating">
+          <strong>4,8/5</strong>
+          <span>2.798 avaliações verificadas · #1 em Máquinas de Costura</span>
         </div>
       </div>
-      <div class="hero-visual">
+
+      <aside class="product-card">
         <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=680&h=680&fit=crop&q=85"
-          alt="Máquina de costura Singer 4423"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=680&h=760&fit=crop&q=84"
+          alt="Máquina de costura Singer Facilita Pro 4423"
           width="680"
-          height="680"
+          height="760"
           loading="eager"
-          fetchpriority="high"
         />
-        <div class="hero-float-card">
-          <span class="stars">★★★★★</span>
-          <strong>2.798 mulheres</strong>
-          <span>aprovam essa máquina</span>
+        <div class="product-note">
+          <strong>Minha primeira máquina séria</strong>
+          <span>Forte, estável e fácil de pegar confiança.</span>
         </div>
-      </div>
-    </div>
-  </section>
+      </aside>
+    </section>
 
-  <!-- SOCIAL PROOF BAR -->
-  <div class="proof-bar">
-    <div class="container proof-bar-inner">
-      <span>🏆 #1 em Máquinas de Costura</span>
-      <span>⭐ 4,8 de 5 estrelas</span>
-      <span>✅ 2.798 avaliações</span>
-      <span>🚚 Entrega Amazon</span>
-      <span>🔒 Garantia 1 ano</span>
-    </div>
-  </div>
-
-  <!-- A DOR - FALANDO COM ELA -->
-  <section class="section section-pain">
-    <div class="container">
-      <div class="pain-grid">
-        <div class="pain-content">
-          <h2 class="heading-serif">Sabe aquela sensação de querer costurar... mas a máquina não deixa?</h2>
-          <p class="pain-intro">
-            Você viu o tecido perfeito, imaginou a peça pronta, sentou na máquina com toda vontade do mundo... e ela travou. A linha enrolou. O ponto ficou torto. 
-            A frustração bate e você começa a achar que costurar não é pra você.
-          </p>
-          <div class="pain-list">
-            <div class="pain-item">
-              <span>😤</span>
-              <p><strong>Trava no jeans</strong> — e você fica lá, forçando, sem saber se vai estragar</p>
-            </div>
-            <div class="pain-item">
-              <span>🧵</span>
-              <p><strong>A linha não entra na agulha</strong> — 10 minutos de luta antes de começar</p>
-            </div>
-            <div class="pain-item">
-              <span>😞</span>
-              <p><strong>O ponto sai torto</strong> — e parece que você é a culpada, mas é a máquina</p>
-            </div>
-            <div class="pain-item">
-              <span>💸</span>
-              <p><strong>Gastou em máquina barata</strong> — e no fim gastou mais, porque teve que comprar outra</p>
-            </div>
-          </div>
-          <p class="pain-resolve">
-            <strong>Se você se viu em alguma dessas... calma. Não é culpa sua.</strong><br />
-            É a máquina errada. E existe uma que resolve isso tudo.
-          </p>
-        </div>
-        <div class="pain-visual">
-          <img
-            src="https://images.unsplash.com/photo-1585914924626-15adac1e6402?w=560&h=700&fit=crop&q=80"
-            alt="Tecidos variados para costura"
-            width="560"
-            height="700"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- A SOLUÇÃO -->
-  <section class="section section-solution">
-    <div class="container">
-      <div class="solution-header text-center">
-        <div class="badge">A máquina certa existe</div>
-        <h2 class="heading-serif">Singer 4423 — a que as mulheres recomendam de olhos fechados</h2>
-        <p class="solution-sub">
-          Não é porque tem ficha técnica bonita. É porque funciona. No dia a dia real, com tecidos reais, 
-          nas mãos de mulheres reais. Veja o que ela faz por você:
-        </p>
-      </div>
-
-      <div class="benefits-grid">
-        {benefits.map((b) => (
-          <div class="benefit-card">
-            <div class="benefit-icon">{b.icon}</div>
-            <h3>{b.title}</h3>
-            <p>{b.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <div class="solution-cta text-center">
-        <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored" class="btn btn--primary btn--lg">
-          Quero a minha Singer 4423
-        </a>
-        <p class="cta-note">Entrega rápida pela Amazon · Parcela em até 12x</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERIA / LIFESTYLE -->
-  <section class="section section-lifestyle">
-    <div class="container">
-      <div class="text-center lifestyle-header">
-        <h2 class="heading-serif">Imagina poder criar tudo isso...</h2>
-        <p>Da roupa que você sempre quis reformar ao presente feito à mão com carinho.</p>
-      </div>
-      <div class="lifestyle-grid">
-        <div class="lifestyle-card lifestyle-card--big">
-          <img
-            src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=640&h=800&fit=crop&q=80"
-            alt="Mulher costurando com tecidos coloridos"
-            width="640"
-            height="800"
-            loading="lazy"
-          />
-          <div class="lifestyle-label">Roupas exclusivas feitas por você</div>
-        </div>
-        <div class="lifestyle-card">
-          <img
-            src="https://images.unsplash.com/photo-1467043237213-65f2da53396f?w=640&h=420&fit=crop&q=80"
-            alt="Detalhes de costura fina"
-            width="640"
-            height="420"
-            loading="lazy"
-          />
-          <div class="lifestyle-label">Acabamento que parece de ateliê</div>
-        </div>
-        <div class="lifestyle-card">
-          <img
-            src="https://images.unsplash.com/photo-1617881770125-6fb0d039ecb1?w=640&h=420&fit=crop&q=80"
-            alt="Costurando tecido grosso"
-            width="640"
-            height="420"
-            loading="lazy"
-          />
-          <div class="lifestyle-label">Jeans, moletom, lona... sem medo</div>
-        </div>
-        <div class="lifestyle-card lifestyle-card--big">
-          <img
-            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=640&h=800&fit=crop&q=80"
-            alt="Mulher feliz com criações de costura"
-            width="640"
-            height="800"
-            loading="lazy"
-          />
-          <div class="lifestyle-label">De hobby a renda extra</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRANSFORMAÇÃO -->
-  <section class="section section-transform">
-    <div class="container">
-      <div class="transform-inner">
-        <div class="transform-content">
-          <h2 class="heading-serif">Não é só uma máquina. É a confiança de saber que você consegue.</h2>
-          <p class="transform-intro">
-            A Singer 4423 não é sobre especificação técnica. É sobre o que muda na sua vida quando 
-            você finalmente tem uma máquina que <em>acompanha</em> a sua vontade de criar:
-          </p>
-          <ul class="transform-list">
-            <li>Consertar e reformar roupa sem depender de ninguém</li>
-            <li>Fazer a barra do jeans em casa (e sai perfeita!)</li>
-            <li>Criar peças que as pessoas perguntam "onde comprou?"</li>
-            <li>Presentear com algo feito à mão, com amor de verdade</li>
-            <li>Começar uma renda extra com o que você ama fazer</li>
-            <li>Ter um hobby que é só seu, que te dá orgulho</li>
-          </ul>
-          <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored" class="btn btn--light">
-            Eu quero essa transformação
-          </a>
-        </div>
-        <div class="transform-stats">
-          <div class="stat-card">
-            <div class="stat-num">4,8<small>★</small></div>
-            <div class="stat-txt">Nota na Amazon</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">2.798</div>
-            <div class="stat-txt">Mulheres aprovam</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">#1</div>
-            <div class="stat-txt">Mais vendida</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">1.100</div>
-            <div class="stat-txt">Pontos por minuto</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="section section-reviews">
-    <div class="container">
-      <div class="text-center reviews-header">
-        <div class="badge">Avaliações reais da Amazon</div>
-        <h2 class="heading-serif">O que as mulheres falam (com as próprias palavras)</h2>
-        <p>Todas compras verificadas. Todas mulheres reais. Maio de 2026.</p>
-      </div>
-      <div class="reviews-grid">
-        {reviews.map((r) => (
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p class="review-text">"{r.text}"</p>
-            <span class="review-name">— {r.name}</span>
-          </div>
-        ))}
-      </div>
-      <div class="text-center reviews-bottom">
-        <p class="reviews-count"><strong>2.798 avaliações verificadas</strong> com média <strong>4,8/5</strong></p>
-        <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored" class="btn btn--primary btn--lg">
-          Ver todas na Amazon
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPECS (resumido) -->
-  <section class="section section-specs">
-    <div class="container">
-      <div class="specs-grid">
-        <div class="specs-content">
-          <h2 class="heading-serif">Os números (pra quem gosta de detalhes)</h2>
-          <p>A Singer 4423 é feita de metal, vem de Taiwan e tem tudo o que você precisa:</p>
-          <div class="specs-list">
-            <div class="spec-row"><span>Pontos</span><strong>23 tipos incluídos</strong></div>
-            <div class="spec-row"><span>Velocidade</span><strong>1.100 pontos/min</strong></div>
-            <div class="spec-row"><span>Voltagem</span><strong>220V</strong></div>
-            <div class="spec-row"><span>Peso</span><strong>6,4 kg</strong></div>
-            <div class="spec-row"><span>Dimensões</span><strong>48 × 38 × 24,5 cm</strong></div>
-            <div class="spec-row"><span>Material</span><strong>Metal (corpo interno)</strong></div>
-            <div class="spec-row"><span>Garantia</span><strong>1 ano — Singer</strong></div>
-            <div class="spec-row"><span>Nota Amazon</span><strong>4,8 ★ (2.798 avaliações)</strong></div>
-            <div class="spec-row"><span>Ranking</span><strong>#1 em Máquinas de Costura</strong></div>
-          </div>
-        </div>
-        <div class="specs-visual">
-          <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=520&h=600&fit=crop&q=80"
-            alt="Singer 4423 em detalhe"
-            width="520"
-            height="600"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-faq">
-    <div class="container">
-      <div class="text-center faq-header">
-        <h2 class="heading-serif">Dúvidas? Vou te responder como se fosse uma amiga</h2>
-      </div>
-      <div class="faq-list">
-        {faqs.map((faq, i) => (
-          <details class="faq-item" open={i === 0}>
-            <summary class="faq-q">
-              <span>{faq.q}</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </summary>
-            <div class="faq-a">
-              <p>{faq.a}</p>
-            </div>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="section section-final">
-    <div class="container text-center">
-      <h2 class="heading-serif final-title">Pronta pra parar de passar raiva<br />e começar a criar com confiança?</h2>
-      <p class="final-sub">
-        A Singer 4423 é a máquina mais vendida e mais bem avaliada do Brasil por um motivo: 
-        ela funciona. Simples assim. 2.798 mulheres já comprovaram.
+    <section class="section intro wrap" id="vale-a-pena">
+      <span class="eyebrow">O ponto principal</span>
+      <h2>Não é sobre ter “a máquina mais técnica”. É sobre sentar e sentir que você consegue.</h2>
+      <p>
+        A Singer 4423 vende tanto porque resolve um problema simples: ela não deixa a pessoa se sentir incapaz.
+        O motor é forte, o ponto fica firme, a linha passa com facilidade e a casa de botão sai sem drama.
       </p>
-      <div class="final-rating">
-        <span class="stars" style="font-size:1.5rem;">★★★★★</span>
-        <span>4,8 de 5 — 2.798 avaliações na Amazon</span>
-      </div>
-      <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored" class="btn btn--primary btn--xl final-btn">
-        Quero a minha Singer 4423
-      </a>
-      <p class="final-note">Entrega rápida · Pagamento seguro · Garantia 1 ano · Parcela em até 12x</p>
-    </div>
-  </section>
+      <p>
+        Para quem está começando, isso significa menos medo. Para quem já costura, significa menos tempo perdido.
+        Para quem quer transformar costura em renda, significa acabamento mais bonito e trabalho mais rápido.
+      </p>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="/" class="footer-logo">Escolha Certa Brasil</a>
-          <p>Ajudando mulheres a fazerem a escolha certa.</p>
+    <section class="section wide">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Por que ela agrada tanto?</span>
+          <h2>Ela parece simples, mas entrega força onde importa.</h2>
         </div>
-        <div class="footer-links">
-          <a href="/politica-de-privacidade">Política de Privacidade</a>
-          <a href="/termos-de-uso">Termos de Uso</a>
-          <a href={AFFILIATE_URL} target="_blank" rel="noopener sponsored">Ver na Amazon</a>
+        <div class="reason-list">
+          {reasons.map(([title, text]) => (
+            <article class="reason">
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </div>
-      <div class="footer-disclosure">
-        <p>
-          <strong>Divulgação:</strong> Este site participa do Programa de Afiliados da Amazon. 
-          Quando você compra através dos nossos links, recebemos uma comissão sem custo adicional para você. 
-          Isso nos ajuda a manter este conteúdo gratuito.
-        </p>
-      </div>
-      <div class="footer-bottom">
-        <p>© {new Date().getFullYear()} Escolha Certa Brasil. Todos os direitos reservados.</p>
-        <p>Singer® e Facilita Pro® são marcas registradas. Este site não é afiliado oficialmente à Singer.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
+    <section class="section wide">
+      <div class="photo-grid">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=760&h=560&fit=crop&q=82"
+            alt="Tecidos coloridos sendo costurados"
+            width="760"
+            height="560"
+            loading="lazy"
+          />
+          <figcaption>Peças, reformas, presentes e ajustes com acabamento melhor.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1617881770125-6fb0d039ecb1?w=760&h=560&fit=crop&q=82"
+            alt="Costura de tecido grosso"
+            width="760"
+            height="560"
+            loading="lazy"
+          />
+          <figcaption>Jeans e tecidos mais encorpados sem aquele medo da máquina travar.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section quote wrap">
+      <p>
+        “O melhor sinal de que uma máquina é boa não é a ficha técnica. É quando uma mulher compra,
+        usa, recomenda para a mãe, para a irmã, para a amiga e diz: finalmente encontrei uma que aguenta.”
+      </p>
+    </section>
+
+    <section class="section wide">
+      <div class="reviews-head">
+        <span class="eyebrow">Compras verificadas</span>
+        <h2>O que aparece nas avaliações da Amazon</h2>
+        <p>Separei frases curtas porque é isso que importa: gente real dizendo se funcionou.</p>
+      </div>
+
+      <div class="reviews">
+        {reviews.map(([name, text]) => (
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>“{text}”</p>
+            <strong>{name}</strong>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section wide">
+      <div class="buy-box">
+        <div>
+          <span class="eyebrow">Resumo honesto</span>
+          <h2>Compre se você quer uma máquina doméstica forte, fácil e durável.</h2>
+          <p>
+            Eu evitaria se você procura algo ultra barato só para uso ocasional. Mas se quer uma máquina
+            para evoluir, costurar tecido grosso e não se frustrar no primeiro mês, a Singer 4423 faz sentido.
+          </p>
+        </div>
+        <a href={AFFILIATE_URL} class="btn" target="_blank" rel="noopener sponsored">Ver preço atualizado</a>
+      </div>
+    </section>
+
+    <section class="section wide">
+      <div class="specs">
+        <div>
+          <span class="eyebrow">Detalhes técnicos</span>
+          <h2>Ficha rápida</h2>
+        </div>
+        <dl>
+          {specs.map(([label, value]) => (
+            <div>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <section class="section final wrap">
+      <span class="eyebrow">Decisão final</span>
+      <h2>Se a sua máquina atual te faz desistir, talvez o problema nunca tenha sido você.</h2>
+      <p>
+        A Singer 4423 é para quem quer começar direito, voltar a costurar com prazer ou dar um passo mais sério.
+        Forte, prática, bem avaliada e com compra segura pela Amazon.
+      </p>
+      <a href={AFFILIATE_URL} class="btn" target="_blank" rel="noopener sponsored">Comprar pela Amazon</a>
+      <small>Link de afiliado: podemos receber comissão sem custo extra para você.</small>
+    </section>
+
+    <footer class="footer wide">
+      <p>© {new Date().getFullYear()} Escolha Certa Brasil</p>
+      <nav>
+        <a href="/politica-de-privacidade">Política de Privacidade</a>
+        <a href="/termos-de-uso">Termos de Uso</a>
+      </nav>
+    </footer>
+  </main>
 </Layout>
 
 <style>
-  /* HEADER */
-  .header {
-    position: sticky;
-    top: 1rem;
-    z-index: 100;
-    background: rgba(255,255,255,.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--gray-100);
-    border-radius: 999px;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    box-shadow: var(--shadow-sm);
-  }
-  .header-inner {
+  .topbar {
+    min-height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    font-family: Arial, sans-serif;
   }
-  .logo {
+
+  .brand {
+    color: var(--ink);
     font-weight: 800;
-    font-size: 1rem;
-    color: var(--gray-900);
-    letter-spacing: -0.02em;
-  }
-  .header-btn {
-    font-size: 0.875rem;
-    padding: 0.625rem 1.25rem;
-  }
-
-  /* HERO */
-  .hero {
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1.25rem auto 0;
-    padding: 4.5rem 0;
-    background: linear-gradient(160deg, var(--warm-50) 0%, var(--rose-50) 40%, var(--purple-50) 100%);
-    border: 1px solid rgba(244,63,94,.1);
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .hero-container {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .hero-title {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .hero-pre {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--gray-600);
-    display: block;
-  }
-  .hero-main {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.15;
-    color: var(--gray-900);
-  }
-  .hero-sub {
-    font-size: 1.125rem;
-    color: var(--gray-600);
-    line-height: 1.8;
-    max-width: 540px;
-  }
-  .hero-proof {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.9375rem;
-    color: var(--gray-600);
-    font-weight: 500;
-  }
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: flex-start;
-  }
-  .hero-sub-cta {
-    font-size: 0.875rem;
-    color: var(--gray-500);
-  }
-  .hero-visual {
-    position: relative;
-  }
-  .hero-visual img {
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xl);
-    width: min(100%, 420px);
-    margin-left: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
-  }
-  .hero-float-card {
-    position: absolute;
-    bottom: -1.25rem;
-    left: -1.5rem;
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 1rem 1.5rem;
-    box-shadow: var(--shadow-lg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.8125rem;
-    color: var(--gray-600);
-  }
-  .hero-float-card strong {
-    font-size: 0.9375rem;
-    color: var(--gray-900);
-  }
-
-  /* PROOF BAR */
-  .proof-bar {
-    background: var(--gray-900);
-    color: #fff;
-    padding: 1rem 0;
-    overflow: hidden;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 1.25rem;
-  }
-  .proof-bar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-
-  /* PAIN SECTION */
-  .section-pain {
-    background: #fff;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-  }
-  .pain-grid {
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: 3.5rem;
-    align-items: center;
-  }
-  .pain-content h2 {
-    color: var(--gray-900);
-    margin-bottom: 1.5rem;
-  }
-  .pain-intro {
-    font-size: 1.0625rem;
-    color: var(--gray-600);
-    line-height: 1.8;
-  }
-  .pain-list {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .pain-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    background: var(--rose-50);
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--rose-400);
-  }
-  .pain-item span {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    line-height: 1;
-    margin-top: 0.1rem;
-  }
-  .pain-item p {
-    color: var(--gray-700);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-  }
-  .pain-resolve {
-    margin-top: 2rem;
-    font-size: 1.0625rem;
-    color: var(--green-700);
-    line-height: 1.7;
-  }
-  .pain-visual img {
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-  }
-
-  /* SOLUTION / BENEFITS */
-  .section-solution {
-    background: var(--gray-50);
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-  }
-  .solution-header {
-    margin-bottom: 3.5rem;
-  }
-  .solution-header .badge {
-    margin-bottom: 1rem;
-  }
-  .solution-sub {
-    font-size: 1.0625rem;
-    color: var(--gray-600);
-    max-width: 600px;
-    margin: 1rem auto 0;
-    line-height: 1.7;
-  }
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  .benefit-card {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 2rem;
-    border: 1px solid var(--gray-200);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .benefit-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-  .benefit-icon {
-    font-size: 2.25rem;
-    margin-bottom: 1.25rem;
-  }
-  .benefit-card h3 {
-    font-size: 1.125rem;
-    margin-bottom: 0.625rem;
-    color: var(--gray-900);
-  }
-  .benefit-card p {
-    color: var(--gray-600);
-    font-size: 0.9375rem;
-    line-height: 1.65;
-  }
-  .solution-cta {
-    margin-top: 3rem;
-  }
-  .cta-note {
-    font-size: 0.875rem;
-    color: var(--gray-500);
-    margin-top: 0.75rem;
-  }
-
-  /* LIFESTYLE GALLERY */
-  .section-lifestyle {
-    background: #fff;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-  }
-  .lifestyle-header {
-    margin-bottom: 3rem;
-  }
-  .lifestyle-header h2 {
-    margin-bottom: 0.75rem;
-  }
-  .lifestyle-header p {
-    color: var(--gray-600);
-    font-size: 1.0625rem;
-  }
-  .lifestyle-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-  .lifestyle-card {
-    position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .lifestyle-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .lifestyle-card:hover img {
-    transform: scale(1.05);
-  }
-  .lifestyle-card--big {
-    grid-row: span 1;
-  }
-  .lifestyle-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2.5rem 1.25rem 1rem;
-    background: linear-gradient(transparent, rgba(0,0,0,.65));
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-
-  /* TRANSFORM */
-  .section-transform {
-    background: linear-gradient(135deg, var(--purple-900) 0%, var(--rose-900) 100%);
-    color: #fff;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .transform-inner {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .transform-content h2 {
-    color: #fff;
-    margin-bottom: 1.25rem;
-  }
-  .transform-intro {
-    color: rgba(255,255,255,.75);
-    font-size: 1.0625rem;
-    line-height: 1.75;
-  }
-  .transform-intro em {
-    color: #fff;
-    font-style: italic;
-  }
-  .transform-list {
-    list-style: none;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .transform-list li {
-    font-size: 1rem;
-    color: rgba(255,255,255,.85);
-    padding: 0.625rem 0;
-    padding-left: 1.75rem;
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-  }
-  .transform-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--rose-400);
-    font-weight: 700;
-  }
-  .btn--light {
-    margin-top: 2rem;
-    background: #fff;
-    color: var(--purple-800);
-    font-weight: 700;
-    padding: 1rem 2.25rem;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-size: 1rem;
-  }
-  .btn--light:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(255,255,255,.25);
-  }
-  .transform-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-  .stat-card {
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: var(--radius);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    backdrop-filter: blur(4px);
-  }
-  .stat-num {
-    font-size: 2.75rem;
-    font-weight: 900;
-    color: var(--rose-400);
-    line-height: 1;
-  }
-  .stat-num small {
-    font-size: 1.5rem;
-    vertical-align: super;
-  }
-  .stat-txt {
-    color: rgba(255,255,255,.65);
-    font-size: 0.8125rem;
-    margin-top: 0.625rem;
-    font-weight: 500;
   }
 
-  /* REVIEWS */
-  .section-reviews {
-    background: var(--warm-50);
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    border: 1px solid var(--warm-200);
+  .toplink {
+    color: var(--accent-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: center;
+    padding: 70px 0 76px;
+  }
+
+  .lead {
+    font-size: 1.22rem;
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .rating {
+    display: grid;
+    gap: 3px;
+    padding-left: 18px;
+    border-left: 3px solid var(--accent);
+    font-family: Arial, sans-serif;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .rating strong {
+    color: var(--ink);
+    font-size: 1.35rem;
+  }
+
+  .product-card {
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    padding: 18px;
+  }
+
+  .product-card img {
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+
+  .product-note {
+    display: grid;
+    gap: 4px;
+    padding: 18px 4px 4px;
+    font-family: Arial, sans-serif;
+  }
+
+  .product-note strong {
+    font-size: 1rem;
+  }
+
+  .product-note span {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .intro p {
+    font-size: 1.15rem;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 48px;
+  }
+
+  .reason-list {
+    display: grid;
+    gap: 14px;
+  }
+
+  .reason {
+    padding: 22px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+  }
+
+  .reason p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  figure {
+    margin: 0;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 22px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
   }
-  .reviews-header {
-    margin-bottom: 3rem;
+
+  figure img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
-  .reviews-header .badge {
-    margin-bottom: 1rem;
+
+  figcaption {
+    padding: 16px 18px 18px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.92rem;
   }
-  .reviews-header h2 {
-    margin-bottom: 0.75rem;
+
+  .quote {
+    text-align: center;
   }
-  .reviews-header p {
-    color: var(--gray-500);
-    font-size: 0.9375rem;
+
+  .quote p {
+    color: var(--ink);
+    font-size: clamp(1.6rem, 4vw, 2.45rem);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    margin-bottom: 0;
   }
-  .reviews-grid {
+
+  .reviews-head {
+    max-width: 620px;
+    margin-bottom: 28px;
+  }
+
+  .reviews {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-  .review-card {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 1.75rem;
-    border: 1px solid var(--gray-100);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .review-text {
-    color: var(--gray-700);
-    font-size: 0.9375rem;
-    line-height: 1.65;
-    flex: 1;
-    font-style: italic;
-  }
-  .review-name {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    color: var(--gray-500);
-  }
-  .reviews-bottom {
-    margin-top: 3rem;
-  }
-  .reviews-count {
-    color: var(--gray-600);
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
+    gap: 14px;
   }
 
-  /* SPECS */
-  .section-specs {
+  .review {
+    padding: 20px;
     background: #fff;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(47, 36, 29, 0.04);
   }
-  .specs-grid {
+
+  .stars {
+    color: #c68735;
+    letter-spacing: 0.06em;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .review p {
+    font-size: 0.98rem;
+    margin-bottom: 14px;
+  }
+
+  .review strong {
+    font-family: Arial, sans-serif;
+    font-size: 0.86rem;
+  }
+
+  .buy-box {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
     align-items: center;
-  }
-  .specs-content h2 {
-    margin-bottom: 0.75rem;
-  }
-  .specs-content > p {
-    color: var(--gray-600);
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  .specs-list {
-    display: flex;
-    flex-direction: column;
-  }
-  .spec-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.875rem 0;
-    border-bottom: 1px solid var(--gray-100);
-    font-size: 0.9375rem;
-  }
-  .spec-row span {
-    color: var(--gray-500);
-  }
-  .spec-row strong {
-    color: var(--gray-900);
-  }
-  .specs-visual img {
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    width: 100%;
-    object-fit: cover;
+    padding: 34px;
+    background: var(--ink);
+    border-radius: 24px;
   }
 
-  /* FAQ */
-  .section-faq {
-    background: var(--gray-50);
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
+  .buy-box h2,
+  .buy-box p,
+  .buy-box .eyebrow {
+    color: #fff;
   }
-  .faq-header {
-    margin-bottom: 3rem;
+
+  .buy-box p {
+    opacity: 0.75;
+    margin-bottom: 0;
   }
-  .faq-list {
-    max-width: 720px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-  }
-  .faq-item {
+
+  .buy-box .btn {
     background: #fff;
-    border-radius: var(--radius);
-    border: 1px solid var(--gray-200);
-    overflow: hidden;
-    transition: box-shadow 0.2s;
+    color: var(--ink);
+    border-color: #fff;
+    white-space: nowrap;
   }
-  .faq-item[open] {
-    box-shadow: var(--shadow);
+
+  .specs {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 44px;
   }
-  .faq-q {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
-    cursor: pointer;
+
+  dl {
+    margin: 0;
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+
+  dl div {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 18px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  dt {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--ink);
     font-weight: 700;
-    font-size: 1.0625rem;
-    color: var(--gray-900);
-    list-style: none;
-    user-select: none;
-    gap: 1rem;
-    line-height: 1.4;
-  }
-  .faq-q::-webkit-details-marker { display: none; }
-  .faq-chevron {
-    flex-shrink: 0;
-    color: var(--rose-500);
-    transition: transform 0.2s;
-  }
-  details[open] .faq-chevron { transform: rotate(180deg); }
-  .faq-a {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--gray-600);
-    line-height: 1.75;
-    font-size: 0.9375rem;
   }
 
-  /* FINAL CTA */
-  .section-final {
-    background: linear-gradient(160deg, var(--gray-900) 0%, #1e1b4b 100%);
-    color: #fff;
-    padding: 5rem 0;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 0;
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
+  .final {
+    text-align: center;
   }
-  .final-title {
-    color: #fff;
-    max-width: 700px;
-    margin: 0 auto;
+
+  .final p {
+    font-size: 1.16rem;
+    margin-bottom: 28px;
   }
-  .final-sub {
-    color: rgba(255,255,255,.7);
-    font-size: 1.125rem;
-    max-width: 580px;
-    margin: 1.5rem auto 0;
-    line-height: 1.75;
+
+  .final small {
+    display: block;
+    margin-top: 14px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
   }
-  .final-rating {
-    margin-top: 2rem;
+
+  .footer {
+    min-height: 86px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    color: rgba(255,255,255,.6);
-    font-size: 0.9375rem;
-  }
-  .final-btn {
-    margin-top: 2rem;
-  }
-  .final-note {
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    color: rgba(255,255,255,.4);
-  }
-
-  /* FOOTER */
-  .footer {
-    background: var(--gray-900);
-    color: var(--gray-400);
-    padding: 3rem 0 2rem;
-    width: min(1120px, calc(100% - 5rem));
-    margin: 1rem auto 2rem;
-    border-radius: 2rem;
-    overflow: hidden;
-  }
-  .footer-top {
-    display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255,255,255,.06);
-  }
-  .footer-logo {
-    font-weight: 800;
-    font-size: 1rem;
-    color: #fff;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .footer-brand p {
-    font-size: 0.875rem;
-    color: var(--gray-500);
-  }
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-  }
-  .footer-links a {
-    font-size: 0.875rem;
-    color: var(--gray-400);
-    transition: color 0.15s;
-  }
-  .footer-links a:hover { color: var(--rose-400); }
-  .footer-disclosure {
-    margin-top: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    background: rgba(255,255,255,.03);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255,255,255,.05);
-  }
-  .footer-disclosure p {
-    font-size: 0.8125rem;
-    line-height: 1.7;
-    color: var(--gray-500);
-  }
-  .footer-bottom {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  .footer-bottom p {
-    font-size: 0.75rem;
-    color: var(--gray-600);
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    font-family: Arial, sans-serif;
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 1024px) {
-    .header,
-    .hero,
-    .proof-bar,
-    .section-pain,
-    .section-solution,
-    .section-lifestyle,
-    .section-transform,
-    .section-reviews,
-    .section-specs,
-    .section-faq,
-    .section-final,
-    .footer {
-      width: min(100% - 2rem, 960px);
-    }
-    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-    .lifestyle-grid { grid-template-columns: 1fr 1fr; }
+  .footer p {
+    margin: 0;
+    font-size: 0.86rem;
   }
 
-  @media (max-width: 768px) {
-    .header {
-      top: 0.5rem;
-      width: calc(100% - 1rem);
-      border-radius: 1rem;
-    }
+  .footer nav {
+    display: flex;
+    gap: 18px;
+  }
+
+  .footer a {
+    color: var(--muted);
+    font-size: 0.86rem;
+    text-decoration: none;
+  }
+
+  @media (max-width: 820px) {
     .hero,
-    .proof-bar,
-    .section-pain,
-    .section-solution,
-    .section-lifestyle,
-    .section-transform,
-    .section-reviews,
-    .section-specs,
-    .section-faq,
-    .section-final,
-    .footer {
-      width: calc(100% - 1rem);
-      border-radius: 1.25rem;
-    }
-    .hero { padding: 3rem 0; }
-    .hero-container {
+    .split,
+    .specs,
+    .buy-box {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
     }
-    .hero-visual { order: -1; }
-    .hero-float-card { left: 50%; transform: translateX(-50%); bottom: -1rem; }
-    .hero-main { font-size: 2rem; }
-    .pain-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .pain-visual { order: -1; }
-    .benefits-grid { grid-template-columns: 1fr; }
-    .lifestyle-grid { grid-template-columns: 1fr 1fr; }
-    .lifestyle-card--big { grid-row: span 1; }
-    .transform-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .specs-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .footer-top { flex-direction: column; }
-    .footer-links { flex-direction: column; gap: 0.75rem; }
-    .proof-bar-inner { gap: 1rem; font-size: 0.8rem; }
+
+    .reviews {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .buy-box .btn {
+      justify-self: start;
+    }
   }
 
-  @media (max-width: 480px) {
-    .lifestyle-grid { grid-template-columns: 1fr; }
-    .transform-stats { grid-template-columns: 1fr 1fr; }
-    .hero-float-card { display: none; }
+  @media (max-width: 620px) {
+    .topbar,
+    .footer {
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero {
+      padding: 46px 0 56px;
+      gap: 32px;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .photo-grid,
+    .reviews {
+      grid-template-columns: 1fr;
+    }
+
+    dl div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
   }
 </style>
