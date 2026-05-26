@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://singer4423.escolhacertabrasil.com.br/sitemap.xml
