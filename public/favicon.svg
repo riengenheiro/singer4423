@@ -1,21 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#166534"/>
-  <!-- Needle body -->
-  <rect x="30" y="8" width="4" height="28" rx="2" fill="#ffffff"/>
-  <!-- Needle eye -->
-  <ellipse cx="32" cy="10" rx="2.5" ry="1.5" fill="#166534" stroke="#166534" stroke-width="0.5"/>
-  <!-- Needle point -->
-  <polygon points="30,36 34,36 32,44" fill="#ffffff"/>
-  <!-- Thread spool base -->
-  <rect x="20" y="46" width="24" height="12" rx="4" fill="#4ade80"/>
-  <!-- Thread spool caps -->
-  <rect x="18" y="44" width="28" height="4" rx="2" fill="#bbf7d0"/>
-  <rect x="18" y="54" width="28" height="4" rx="2" fill="#bbf7d0"/>
-  <!-- Thread on spool -->
-  <line x1="26" y1="47" x2="26" y2="57" stroke="#166534" stroke-width="1.5" stroke-dasharray="2 2"/>
-  <line x1="30" y1="47" x2="30" y2="57" stroke="#166534" stroke-width="1.5" stroke-dasharray="2 2"/>
-  <line x1="34" y1="47" x2="34" y2="57" stroke="#166534" stroke-width="1.5" stroke-dasharray="2 2"/>
-  <line x1="38" y1="47" x2="38" y2="57" stroke="#166534" stroke-width="1.5" stroke-dasharray="2 2"/>
-  <!-- Thread line from needle to spool -->
-  <path d="M 32 44 Q 38 45 38 47" stroke="#bbf7d0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="16" fill="#7c3aed"/>
+  <path d="M32 10 C32 10 30 18 30 26 L30 38 C30 40 31 41 32 41 C33 41 34 40 34 38 L34 26 C34 18 32 10 32 10Z" fill="#fff"/>
+  <circle cx="32" cy="14" r="2" fill="#7c3aed"/>
+  <path d="M32 41 Q28 44 24 48 Q20 52 22 54 Q24 56 28 53 Q32 50 32 48" stroke="#f9a8d4" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M32 48 Q32 50 36 53 Q40 56 42 54 Q44 52 40 48 Q36 44 32 41" stroke="#f9a8d4" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="32" cy="44" r="1.5" fill="#f9a8d4"/>
 </svg>

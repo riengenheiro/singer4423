@@ -52,16 +52,14 @@ const schemaProduct = JSON.stringify({
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#166534" />
+    <meta name="theme-color" content="#7c3aed" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.svg" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
@@ -69,21 +67,21 @@ const schemaProduct = JSON.stringify({
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Singer Facilita Pro 4423 — A máquina que transforma iniciantes" />
+    <meta property="og:image:alt" content="Singer Facilita Pro 4423 — Sua primeira máquina séria" />
     <meta property="og:site_name" content="Escolha Certa Brasil" />
     <meta property="og:locale" content="pt_BR" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content="Singer Facilita Pro 4423" />
 
-    <!-- Schema.org -->
     <script type="application/ld+json" set:html={schemaProduct} />
 
-    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="dns-prefetch" href="https://amzn.to" />
 
@@ -95,29 +93,53 @@ const schemaProduct = JSON.stringify({
       }
 
       :root {
-        --green-900: #14532d;
-        --green-800: #166534;
-        --green-700: #15803d;
-        --green-600: #16a34a;
-        --green-100: #dcfce7;
-        --green-50:  #f0fdf4;
-        --red-600:   #dc2626;
-        --red-50:    #fef2f2;
+        --rose-50: #fff1f2;
+        --rose-100: #ffe4e6;
+        --rose-200: #fecdd3;
+        --rose-400: #fb7185;
+        --rose-500: #f43f5e;
+        --rose-600: #e11d48;
+        --rose-700: #be123c;
+        --rose-900: #881337;
+
+        --purple-50: #faf5ff;
+        --purple-100: #f3e8ff;
+        --purple-500: #a855f7;
+        --purple-600: #9333ea;
+        --purple-700: #7c3aed;
+        --purple-800: #6b21a8;
+        --purple-900: #581c87;
+
         --amber-400: #fbbf24;
         --amber-500: #f59e0b;
-        --gray-50:   #f9fafb;
-        --gray-100:  #f3f4f6;
-        --gray-200:  #e5e7eb;
-        --gray-300:  #d1d5db;
-        --gray-500:  #6b7280;
-        --gray-600:  #4b5563;
-        --gray-700:  #374151;
-        --gray-800:  #1f2937;
-        --gray-900:  #111827;
-        --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
-        --shadow:    0 4px 16px rgba(0,0,0,.08);
-        --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
-        --radius:    0.75rem;
+
+        --green-500: #22c55e;
+        --green-600: #16a34a;
+        --green-700: #15803d;
+
+        --warm-50: #fffbf7;
+        --warm-100: #fef3eb;
+        --warm-200: #fde8d8;
+        --warm-800: #3d2209;
+
+        --gray-50:  #fafafa;
+        --gray-100: #f5f5f5;
+        --gray-200: #e5e5e5;
+        --gray-300: #d4d4d4;
+        --gray-400: #a3a3a3;
+        --gray-500: #737373;
+        --gray-600: #525252;
+        --gray-700: #404040;
+        --gray-800: #262626;
+        --gray-900: #171717;
+
+        --shadow-sm: 0 1px 3px rgba(0,0,0,.05);
+        --shadow:    0 4px 20px rgba(0,0,0,.06);
+        --shadow-lg: 0 12px 40px rgba(0,0,0,.1);
+        --shadow-xl: 0 20px 60px rgba(0,0,0,.12);
+        --radius:    1rem;
+        --radius-sm: 0.625rem;
+        --radius-lg: 1.5rem;
       }
 
       html {
@@ -126,11 +148,12 @@ const schemaProduct = JSON.stringify({
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-        color: var(--gray-900);
-        line-height: 1.65;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        color: var(--gray-800);
+        line-height: 1.7;
         background: #fff;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
 
       img {
@@ -145,45 +168,30 @@ const schemaProduct = JSON.stringify({
       }
 
       .container {
-        max-width: 1100px;
+        max-width: 1080px;
         margin: 0 auto;
-        padding: 0 1.25rem;
+        padding: 0 2rem;
       }
 
       .section {
-        padding: 5rem 0;
-      }
-
-      .section--alt {
-        background: var(--gray-50);
-      }
-
-      .section--green {
-        background: var(--green-800);
-        color: #fff;
-      }
-
-      .section--dark {
-        background: var(--gray-900);
-        color: #fff;
+        padding: 6rem 0;
       }
 
       h1, h2, h3, h4 {
         line-height: 1.2;
         font-weight: 800;
-      }
-
-      h2 {
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
         color: var(--gray-900);
       }
 
-      h3 {
-        font-size: 1.2rem;
+      .heading-serif {
+        font-family: 'Playfair Display', Georgia, serif;
         font-weight: 700;
       }
 
-      /* Buttons */
+      h2 {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+      }
+
       .btn {
         display: inline-flex;
         align-items: center;
@@ -191,91 +199,82 @@ const schemaProduct = JSON.stringify({
         gap: 0.5rem;
         font-size: 1.0625rem;
         font-weight: 700;
-        padding: 0.875rem 2rem;
-        border-radius: var(--radius);
+        padding: 1rem 2.25rem;
+        border-radius: 999px;
         text-decoration: none;
-        transition: all 0.2s ease;
+        transition: all 0.25s ease;
         cursor: pointer;
         border: none;
-        line-height: 1;
-        white-space: nowrap;
+        line-height: 1.2;
+        font-family: inherit;
       }
 
       .btn--primary {
-        background: var(--green-600);
+        background: linear-gradient(135deg, var(--rose-500), var(--purple-600));
         color: #fff;
-        box-shadow: 0 4px 14px rgba(22,163,74,.4);
+        box-shadow: 0 4px 20px rgba(244,63,94,.3);
       }
 
       .btn--primary:hover {
-        background: var(--green-700);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(22,163,74,.45);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(244,63,94,.4);
       }
 
       .btn--primary:active {
-        transform: translateY(0);
+        transform: translateY(-1px);
       }
 
       .btn--lg {
-        font-size: 1.25rem;
-        padding: 1rem 2.5rem;
+        font-size: 1.1875rem;
+        padding: 1.125rem 2.75rem;
       }
 
       .btn--xl {
-        font-size: 1.375rem;
-        padding: 1.125rem 3rem;
-        border-radius: 999px;
+        font-size: 1.25rem;
+        padding: 1.25rem 3rem;
       }
 
-      /* Stars */
+      .btn--outline {
+        background: transparent;
+        border: 2px solid var(--gray-200);
+        color: var(--gray-700);
+      }
+
+      .btn--outline:hover {
+        border-color: var(--rose-400);
+        color: var(--rose-600);
+        background: var(--rose-50);
+      }
+
       .stars {
         color: var(--amber-400);
         letter-spacing: 0.05em;
         font-size: 1.1rem;
       }
 
-      /* Badge */
       .badge {
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
-        background: var(--green-100);
-        color: var(--green-800);
+        background: var(--rose-50);
+        color: var(--rose-700);
         font-size: 0.8125rem;
         font-weight: 700;
-        padding: 0.25rem 0.75rem;
+        padding: 0.375rem 0.875rem;
         border-radius: 999px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.02em;
       }
 
-      /* Cards */
-      .card {
-        background: #fff;
-        border-radius: var(--radius);
-        padding: 1.75rem;
-        box-shadow: var(--shadow);
-        border: 1px solid var(--gray-100);
-      }
-
-      /* Utilities */
       .text-center { text-align: center; }
-      .text-green  { color: var(--green-700); }
-      .text-red    { color: var(--red-600); }
-      .text-muted  { color: var(--gray-500); }
-      .font-bold   { font-weight: 700; }
-      .mt-1  { margin-top: 0.25rem; }
-      .mt-2  { margin-top: 0.5rem; }
-      .mt-3  { margin-top: 0.75rem; }
-      .mt-4  { margin-top: 1rem; }
-      .mt-6  { margin-top: 1.5rem; }
-      .mt-8  { margin-top: 2rem; }
 
-      /* Responsive */
       @media (max-width: 768px) {
-        .section { padding: 3rem 0; }
+        .container { padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
         .btn--xl { font-size: 1.125rem; padding: 1rem 2rem; }
+      }
+
+      @media (max-width: 480px) {
+        .container { padding: 0 1.25rem; }
       }
     </style>
   </head>
