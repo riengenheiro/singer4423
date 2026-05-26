@@ -1,5 +1,7 @@
 ---
 const AFFILIATE_URL = 'https://amzn.to/4dObHF0';
+const SITE_URL = 'https://singer4423.escolhacertabrasil.com.br';
+const OG_IMAGE = `${SITE_URL}/images/singer-4423-compartilhamento.webp`;
 
 const title = 'Singer 4423 vale a pena? Máquina forte para costurar jeans e começar direito';
 const description =
@@ -54,13 +56,13 @@ const specs = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://singer4423.escolhacertabrasil.com.br/" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&q=82" />
+    <meta property="og:image" content={OG_IMAGE} />
     <meta property="og:locale" content="pt_BR" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&q=82" />
+    <meta name="twitter:image" content={OG_IMAGE} />
 
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
@@ -110,7 +112,7 @@ const specs = [
 
         <figure class="hero-card">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=720&h=760&fit=crop&q=84"
+            src="/images/singer-4423-hero.webp"
             alt="Máquina de costura Singer Facilita Pro 4423"
             width="720"
             height="760"
@@ -147,14 +149,14 @@ const specs = [
 
       <section class="section photos">
         <img
-          src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=760&h=520&fit=crop&q=82"
+          src="/images/costura-tecidos-coloridos.webp"
           alt="Costura com tecidos coloridos"
           width="760"
           height="520"
           loading="lazy"
         />
         <img
-          src="https://images.unsplash.com/photo-1617881770125-6fb0d039ecb1?w=760&h=520&fit=crop&q=82"
+          src="/images/costura-tecido-grosso.webp"
           alt="Costura em tecido grosso"
           width="760"
           height="520"
