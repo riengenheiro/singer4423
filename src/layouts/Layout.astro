@@ -151,7 +151,9 @@ const schemaProduct = JSON.stringify({
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
         color: var(--gray-800);
         line-height: 1.7;
-        background: #fff;
+        background:
+          radial-gradient(circle at top left, rgba(244,63,94,.08), transparent 28rem),
+          linear-gradient(180deg, #fffaf7 0%, #f7efe8 100%);
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
       }
@@ -168,13 +170,13 @@ const schemaProduct = JSON.stringify({
       }
 
       .container {
-        max-width: 1080px;
+        max-width: 920px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 0 2.5rem;
       }
 
       .section {
-        padding: 6rem 0;
+        padding: 4.5rem 0;
       }
 
       h1, h2, h3, h4 {
@@ -189,7 +191,7 @@ const schemaProduct = JSON.stringify({
       }
 
       h2 {
-        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-size: clamp(1.65rem, 3.2vw, 2.35rem);
       }
 
       .btn {
@@ -269,7 +271,7 @@ const schemaProduct = JSON.stringify({
 
       @media (max-width: 768px) {
         .container { padding: 0 1.5rem; }
-        .section { padding: 4rem 0; }
+        .section { padding: 3.5rem 0; }
         .btn--xl { font-size: 1.125rem; padding: 1rem 2rem; }
       }
 
